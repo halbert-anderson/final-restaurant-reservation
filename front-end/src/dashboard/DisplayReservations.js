@@ -1,4 +1,36 @@
-const reservationsForThisDate = reservations.length ? (
+import React from "react";
+import { Link , useHistory } from "react-router-dom";
+import { listReservations, updateStatus } from "../utils/api";
+
+function DisplayReservations({ reservations, setReservations, setReservationsError }) {
+
+    const history = useHistory();
+
+    async function updateStatusHandler(reservation_id, status) {
+      const abortController = new AbortController();
+      try {
+        await updateStatus(reservation_id, status, abortController.signal);
+        // Update the local state to reflect changes
+        const updatedReservations = await listReservations();
+        setReservations(updatedReservations);
+      } catch (error) {
+        setReservationsError(error);
+      }
+    }
+
+    const finishReservationHandler = async (reservation_id) => {
+        if (window.confirm("Do you want to cancel this reservation?")) {
+            try {
+                await updateStatusHandler(reservation_id, "cancelled");
+                history.go(0);
+            }
+            catch(error) {
+                setReservationsError(error);
+            }
+      };
+    }
+
+    const reservationsForThisDate = reservations.length ? (
         reservations.map((reservation) => (
             <tr key={reservation.reservation_id}>
                 <td data-label="#">{reservation.reservation_id}</td>
@@ -58,3 +90,7 @@ const reservationsForThisDate = reservations.length ? (
         </div>
     );
     
+  }
+
+
+export default DisplayReservations;
