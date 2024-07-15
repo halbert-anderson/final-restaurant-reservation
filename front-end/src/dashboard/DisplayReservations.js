@@ -30,7 +30,19 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
       };
     }
 
-    const reservationsForThisDate = reservations.length ? (
+    const columnHeadingsForReservationTable = ( 
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Reservation Date</th>
+                <th scope="col">Reservation Time</th>
+                <th scope="col">People</th>
+                <th scope="col">Status</th>
+            </tr>);
+
+const reservationsForThisDate = reservations.length ? (
         reservations.map((reservation) => (
             <tr key={reservation.reservation_id}>
                 <td data-label="#">{reservation.reservation_id}</td>
@@ -40,33 +52,33 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
                 <td data-label="Reservation Date">{reservation.reservation_date}</td>
                 <td data-label="Reservation Time">{reservation.reservation_time}</td>
                 <td data-label="People">{reservation.people}</td>
-                <td data-label="Status">{reservation.status}</td>   
-                {reservation.status === "booked" && ( 
-                <>  
-                    <td data-label="Seat">
-                        <Link className='btn btn-primary'
-                              to={`/reservations/${reservation.reservation_id}/seat`}
-                        >Seat
-                        </Link>                        
-                    </td>
+                <td data-label="Status">{reservation.status}</td>
+                {reservation.status === "booked" && (
+                    <>  
+                        <td>
+                            <Link className='btn btn-primary'
+                                  to={`/reservations/${reservation.reservation_id}/seat`}
+                            >Seat
+                            </Link>                        
+                        </td>
     
-                    <td data-label="Edit">
-                        <Link className="btn btn-secondary"
-                              to={`/reservations/${reservation.reservation_id}/edit`}
-                        >Edit 
-                        </Link>
-                    </td>
+                        <td>
+                            <Link className="btn btn-secondary"
+                                  to={`/reservations/${reservation.reservation_id}/edit`}
+                            >Edit 
+                            </Link>
+                        </td>
     
-                    <td data-label="Cancel">
-                        <button className="btn btn-danger"
-                                type="button"
-                                data-reservation-id-cancel={reservation.reservation_id}
-                                onClick={() => finishReservationHandler(reservation.reservation_id)}
-                        >Cancel
-                        </button>
-                    </td>
-                </> )}
-                               
+                        <td>
+                            <button className="btn btn-danger"
+                                    type="button"
+                                    data-reservation-id-cancel={reservation.reservation_id}
+                                    onClick={() => finishReservationHandler(reservation.reservation_id)}
+                            >Cancel
+                            </button>
+                        </td>
+                    </>
+                )}
             </tr>
         ))
     ) : (
@@ -78,18 +90,18 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
     );
     
     return (
-        <div className="table-responsive">
-            <table className="table">
-                <thead>
-                    {columnHeadingsForReservationTable} 
-                </thead>
-                <tbody>
-                    {reservationsForThisDate}
-                </tbody>
-            </table>
-        </div>
-    );
-    
+
+        <table className="table">
+            <thead>
+                {columnHeadingsForReservationTable} 
+            </thead>
+            <tbody>
+                {reservationsForThisDate}
+            </tbody>
+        </table>
+        
+  );
+
   }
 
 
