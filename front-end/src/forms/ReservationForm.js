@@ -8,7 +8,6 @@ function ReservationForm( {reservation, changeHandler,submitHandler}){
         history.goBack();
     } 
 
-     //NOTE: when an arrow function vs function
 return (
     <form onSubmit={submitHandler} className="form-group mb-4">
         <div className="row mb-3">
@@ -22,7 +21,6 @@ return (
                        type="text"
                        placeholder="First Name"
                        autoFocus
-                    //    pattern="^[a-zA-Z0-9'-. ]+$"
                        value={reservation.first_name}
                        onChange={changeHandler}
                        required={true}
@@ -37,7 +35,6 @@ return (
                        name="last_name"
                        type="text"
                        placeholder="Last Name"
-                    //    pattern="^[a-zA-Z0-9'-. ]+$"
                        value={reservation.last_name}
                        onChange={changeHandler}
                        required={true}
@@ -53,7 +50,6 @@ return (
                    name="mobile_number"
                    type="text"
                    placeholder="Mobile Number"
-                //    pattern="\d{3}-\d{3}-\d{4}"  // Escaped backslash for correct JSX interpretation
                    value={reservation.mobile_number}
                    onChange={changeHandler}
                    required={true}
@@ -68,7 +64,6 @@ return (
                        id="reservation_date"
                        name="reservation_date"
                        type="date"
-                    //    pattern="\d{4}-\d{2}-\d{2}"
                        value={reservation.reservation_date}
                        onChange={changeHandler}
                        required={true} 
@@ -82,7 +77,6 @@ return (
                        id="reservation_time"
                        name="reservation_time"
                        type="time"
-                    //    pattern="[0-9]{2}:[0-9]{2}"
                        value={reservation.reservation_time}
                        onChange={changeHandler}
                        required={true}

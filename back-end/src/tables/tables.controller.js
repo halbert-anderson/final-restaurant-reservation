@@ -21,10 +21,8 @@ async function tableExists(req, res ,next){
 }
 
 async function create(req, res) {
-    console.log( "tables.controller - req.body.data: ", req.body.data);
     const table = req.body.data;
     const data = await tablesService.create(table);
-    console.log( "tables.controller - req.body.data: ", req.body.data);
       
     res.status(201).json({ data });
 }

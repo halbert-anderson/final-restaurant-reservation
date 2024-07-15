@@ -31,18 +31,15 @@ async function reservationExists(req, res, next) {
 async function create(req, res) {
   const reservation = req.body.data;
   const newReservation = await reservationsService.create(reservation);
-  console.log("create - New Reservation: ",newReservation);
-  res.status(201)
+   res.status(201)
      .json({ data: newReservation });
 }
 
 async function list(req, res) {
-  
   const  { date, mobile_number } = req.query;
   const data = await (date? reservationsService.list(date)
                          : reservationsService.search(mobile_number));
-  console.log("data: ",data);
-  res.json({ data });
+   res.json({ data });
 }
 
 async function read(req, res) {
@@ -56,7 +53,6 @@ async function update(req, res, next) {
     const reservation_Id = res.locals.reservation.reservation_id;
     const updatedReservation = {...reservation, 
                                 reservation_id: reservation_Id};
-  
     const data = await reservationsService.update(updatedReservation);
     res.status(200).json({ data });
   } catch (error) {

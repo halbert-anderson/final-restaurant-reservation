@@ -62,7 +62,6 @@ export async function listReservations(params, signal) {
   const url = new URL(`${API_BASE_URL}/reservations`);
   Object.entries(params).forEach(([key, value]) => 
     url.searchParams.append(key, value.toString()));
-  // console.log("listReservations - url: ", url );
   return await fetchJson(url, { headers, signal }, [])
   .then(formatReservationDate)
   .then(formatReservationTime);
@@ -71,7 +70,6 @@ export async function listReservations(params, signal) {
  
 
 export async function createReservation(reservation, signal) {
-  console.log("api- createReservation: ", reservation)
    const url = new URL(`${API_BASE_URL}/reservations`);
   const options = {
     method: "POST",
@@ -79,7 +77,6 @@ export async function createReservation(reservation, signal) {
     body: JSON.stringify({ data: reservation }),
     signal,
   };
-console.log("api - createReservation - url: ", url, "options: ", options)
 return await fetchJson(url, options, reservation);
 }
 
@@ -91,23 +88,18 @@ export async function readReservation(reservation_id,signal) {
  }
  
 export async function updateReservation(reservation, signal) {
-  console.log("api - updateReservation: ", reservation)
   const { reservation_id } = reservation;
   const url = new URL (`${API_BASE_URL}/reservations/${reservation_id}`);
-  // Object.entries(params).forEach(([key, value]) => 
-  //   url.searchParams.append(key, value.toString()));
   const options = {
     method: "PUT",
     headers,
     body: JSON.stringify({ data: { ...reservation } }),
     signal,
   };
-console.log("api - updateReservation - url: ", url, "options: ", options)
 return await fetchJson(url, options, reservation);
 }
 
 export async function createTable(table, signal) {
-  console.log("Table Creation - table: ", table);
   const url = new URL(`${API_BASE_URL}/tables`);
   const options = {
     method: "POST",
@@ -115,21 +107,17 @@ export async function createTable(table, signal) {
     body: JSON.stringify({ data: table }),
     signal,
   };
-console.log("Table Creation - url: ", url, "options: ", options)
 const response = await fetchJson(url, options, table);
-console.log("createTable in api - response: ",response);
 return response;
 // return await fetchJson(url, options, table);
 }
 
 export async function listTables(signal) {
   const url = new URL(`${API_BASE_URL}/tables`);
-    console.log("listTables - url: ", url, { headers, signal }  );
   return await fetchJson(url, { signal });
 }
 
 export async function seatReservation(table_id, reservation_id, signal) {
-  console.log("Table Assignement - tableId : ", table_id);
   const url = new URL(`${API_BASE_URL}/tables/${table_id}/seat`);
   const options = {
    method: "PUT",
@@ -137,7 +125,6 @@ export async function seatReservation(table_id, reservation_id, signal) {
    body: JSON.stringify({ data: { reservation_id:reservation_id } }),
    signal,
  };
-console.log("Table Assigment - url: ", url, "options: ", options)
 return await fetchJson(url, options );
 }
 

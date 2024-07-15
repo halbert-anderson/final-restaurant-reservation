@@ -43,7 +43,6 @@ function hasValidCapacity(req, res, next) {
 
 
 function hasData(req, res, next) {
-  console.log("hasData: ",req.body.data);
   if (req.body.data) {
     return next()
   }

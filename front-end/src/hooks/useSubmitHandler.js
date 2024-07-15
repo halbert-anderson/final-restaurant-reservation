@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
  * @returns {Object} Contains the submitHandler function and any submission errors.
  */
 
-function useSubmitHandler(apiFunction, validationFunction = () => ({}), onSuccess) {
+function useSubmitHandler(apiFunction, onSuccess) {
   const [errors, setErrors] = useState(null);
   const history = useHistory();
 
@@ -18,13 +18,7 @@ function useSubmitHandler(apiFunction, validationFunction = () => ({}), onSucces
     event.preventDefault();
     const abortController = new AbortController();
 
-    // Use the passed validation function 
-    const validationError = validationFunction(formData);
-    if (Object.keys(validationError).length) {
-      setErrors(validationError); 
-      abortController.abort();
-      return;
-  }
+    
 
     try {
       const response = await apiFunction(formData, abortController.signal);

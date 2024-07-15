@@ -18,9 +18,8 @@ const VALID_PROPERTIES = [
     const { data = {} } = req.body;
   
     const invalidFields = Object.keys(data).filter(
-      (field) => {console.log( "props: ",field)
+      (field) => {
         const isItValid = !VALID_PROPERTIES.includes(field)
-        console.log("Is it not! Valid: ",isItValid);
         return isItValid;}
       );
   
@@ -56,7 +55,6 @@ const VALID_PROPERTIES = [
 
 
 function hasData(req, res, next) {
-    console.log("hasData: ",req.body.data);
     if (req.body.data) {
       return next()
     }
@@ -84,7 +82,7 @@ function hasReservationId(req,res,next) {
 function hasValidFirstAndLastName(req, res, next) {
     const regName =/^[a-zA-Z0-9'-. ]+$/;
     const { first_name, last_name } =req.body.data;
-    console.log("firstAndLastNameAreValid - First Name:", first_name, " Last Name: ",last_name);
+
     if(!regName.test(first_name)){
       next({ status: 400, 
              message: "Must include valid first_name."})
@@ -103,7 +101,7 @@ function hasValidMobileNumber(req, res, next) {
     const { mobile_number } = req.body.data;
     const regMobileNum = /^\d{3}-\d{3}-\d{4}$/
     const regMobileNum2 = /^\d{10}$/;
-    console.log("mobileNumberIsValid: ", mobile_number);
+    
     if(!regMobileNum.test(mobile_number) && !regMobileNum2.test(mobile_number)){
       next({ status: 400, 
              message: "Must include valid mobile_number (ex. ddd-ddd-dddd)." })
@@ -116,8 +114,7 @@ function hasValidMobileNumber(req, res, next) {
 function hasValidDate(req, res, next) {
     const { reservation_date, reservation_time } = req.body.data;
     const regDate = /^\d{4}\-\d{1,2}\-\d{1,2}$/;
-    console.log("ReservationDateIsValid: ", reservation_date);
-    
+
     if(!regDate.test(reservation_date)){
        next({ status: 400, 
              message: "Must include valid reservation_date (ex. dd/mm/yyyy)." })
@@ -143,7 +140,6 @@ function hasValidDate(req, res, next) {
 function hasValidTime(req, res, next) {
     const { reservation_time } = req.body.data;
     const regTime = /^(?:[01]\d|2[0-3]):[0-5]\d$/; 
-    console.log("hasValidTime: ",reservation_time);
 
     if (!regTime.test(reservation_time)) {
          return next({ status: 400, 
@@ -169,8 +165,7 @@ function hasValidTime(req, res, next) {
 
 function hasValidPeople(req, res, next) {
     const { people } = req.body.data;
-    console.log("peopleIsValid:", people);
-
+    
     // Check if people is not a number
     if (!Number.isInteger(people)) {
       return next({ status: 400, 

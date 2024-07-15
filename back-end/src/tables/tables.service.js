@@ -50,7 +50,8 @@ async function clearTable(table_id) {
 
         await transaction.commit();
         return read(table_id); 
-    } catch (error) {
+    } 
+    catch (error) {
         await transaction.rollback();
         throw error;
     }    
