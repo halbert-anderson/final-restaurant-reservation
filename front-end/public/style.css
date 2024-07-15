@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333333; /* Charcoal for text */
-    background-color: #F5F5DC; /* Cream background */
+    color: #F5F5DC; /* Cream color for text to contrast the dark red */
+    background-color: #8B0000; /* Dark red background */
     line-height: 1.6;
 }
 
@@ -17,14 +17,17 @@ body {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
+    background-color: #FFFFFF; /* White background for container for legibility */
+    padding: 20px; /* Added padding for some spacing inside container */
+    border-radius: 8px; /* Optional border radius for aesthetic */
 }
 
 header {
-    background: #8B0000; /* Dark Red for header */
-    color: #F5F5DC; /* Cream text for contrast */
+    background: #333333; /* Dark grey for header */
+    color: #FFF; /* White for header text */
     padding-top: 10px;
     min-height: 50px;
-    border-bottom: 3px solid #D4AF37; /* Gold for accent */
+    border-bottom: 3px solid #D4AF37; /* Gold for a decorative accent */
 }
 
 nav {
@@ -35,14 +38,14 @@ nav {
 }
 
 nav a {
-    color: #F5F5DC; /* Cream links */
+    color: #FFF; /* White text for navigation to stand out */
     text-decoration: none;
     padding: 10px 15px;
     margin: 0 5px;
 }
 
 nav a:hover {
-    background-color: #D4AF37; /* Gold on hover */
+    background-color: #D4AF37; /* Gold on hover for visual feedback */
 }
 
 table {
@@ -52,18 +55,18 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #D3D3D3; /* Soft Gray for borders */
+    border: 1px solid #D3D3D3; /* Light gray for a softer look */
 }
 
 th, td {
     padding: 8px;
     text-align: center;
-    background-color: #FFF; /* White for cell backgrounds */
+    background-color: #FFF; /* White backgrounds in table cells for readability */
 }
 
 button {
-    background-color: #000080; /* Navy Blue for buttons */
-    color: #F5F5DC; /* Cream text */
+    background-color: #000080; /* Navy blue for buttons, good contrast with dark red */
+    color: #F5F5DC; /* Cream color text */
     border: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -71,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #228B22; /* Deep Green on hover */
+    background-color: #228B22; /* Forest green for hover, stands out against dark red */
 }
 
 /* Responsive styles */

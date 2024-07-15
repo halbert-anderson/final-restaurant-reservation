@@ -12,6 +12,7 @@ return (<form onSubmit={submitHandler} className="form-group">
                        id="mobile_number"
                        name="mobile_number"
                        placeholder="Enter a customer's phone number"
+                       autoFocus
                        value={mobileNumber}
                        onChange={changeHandler}
                 />

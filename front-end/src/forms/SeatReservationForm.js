@@ -15,6 +15,7 @@ function SeatReservationForm({ tables, table_id, changeHandler, submitHandler })
       <select className="form-control"
               name="table_id"
               id="table_id"
+              autoFocus
               value={table_id}
               onChange={changeHandler}
               required={true}

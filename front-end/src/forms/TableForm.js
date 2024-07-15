@@ -26,6 +26,7 @@ return (
                        type="text"
                        placeholder="Table Name"
                        minLength="2"
+                       autoFocus
                        value={table.table_name}
                        onChange={changeHandler}
                        required={true}
