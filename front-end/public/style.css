@@ -76,7 +76,7 @@ button {
 button:hover {
     background-color: #228B22; /* Forest green for hover, stands out against dark red */
 }
-
+/* 
 /* Responsive styles */
 @media (max-width: 768px) {
     .container {
@@ -157,4 +157,4 @@ button:hover {
         /* Adjust label padding for smaller screens */
         left: 5px;  /* reduced padding for labels */
     }
-}
+} */
