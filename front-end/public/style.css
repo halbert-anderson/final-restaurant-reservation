@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #990214;
+    color: #333333; /* Charcoal for text */
+    background-color: #F5F5DC; /* Cream background */
     line-height: 1.6;
 }
 
@@ -20,11 +20,11 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #8B0000; /* Dark Red for header */
+    color: #F5F5DC; /* Cream text for contrast */
     padding-top: 10px;
     min-height: 50px;
-    border-bottom: #0779e4 3px solid;
+    border-bottom: 3px solid #D4AF37; /* Gold for accent */
 }
 
 nav {
@@ -35,14 +35,14 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: #F5F5DC; /* Cream links */
     text-decoration: none;
     padding: 10px 15px;
     margin: 0 5px;
 }
 
 nav a:hover {
-    background-color: #535050;
+    background-color: #D4AF37; /* Gold on hover */
 }
 
 table {
@@ -52,17 +52,18 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #D3D3D3; /* Soft Gray for borders */
 }
 
 th, td {
     padding: 8px;
     text-align: center;
+    background-color: #FFF; /* White for cell backgrounds */
 }
 
 button {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #000080; /* Navy Blue for buttons */
+    color: #F5F5DC; /* Cream text */
     border: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -70,7 +71,7 @@ button {
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: #228B22; /* Deep Green on hover */
 }
 
 /* Responsive styles */
