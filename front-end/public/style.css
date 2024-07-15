@@ -12,6 +12,10 @@ body {
     line-height: 1.6;
 }
 
+.center-text {
+    text-align: center;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;

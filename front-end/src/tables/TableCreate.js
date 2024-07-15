@@ -50,7 +50,7 @@ function TableCreate() {
    
 return (
     <div>
-        <h3 className="mb-3">Table Assignment</h3>
+        <h3 className="center-text">Table Assignment</h3>
         <ErrorAlert error={tableErrors} />
         <TableForm table={table} changeHandler={changeHandler} submitHandler={submitHandler} />     
     </div>

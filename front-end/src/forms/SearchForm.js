@@ -6,7 +6,7 @@ function SearchForm({ mobileNumber, changeHandler, submitHandler }) {
 return (
     <form onSubmit={submitHandler} className="form-group">
         <div className="row align-items-center search-bar">
-           <div className="col-md-8 col-12">
+           <div className="col-md-8 col-12 mt-2 mt-md-0">
                 <label htmlFor="mobile_number" className="col" >
                 </label>
                 <input className="form-control"

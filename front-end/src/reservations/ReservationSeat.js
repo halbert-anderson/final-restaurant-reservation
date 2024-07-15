@@ -51,7 +51,7 @@ function ReservationSeat() {
 
     return (
         <div>
-            <h3 className="mb-3">Seat Reservation</h3>
+            <h3 className="center-text">Seat Reservation</h3>
             <ErrorAlert error={seatReservationErrors} />
             {loading ? (
                 <p>Loading tables...</p>

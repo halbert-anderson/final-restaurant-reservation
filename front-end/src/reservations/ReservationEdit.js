@@ -74,7 +74,7 @@ function ReservationEdit() {
 
     return (isLoading ? <p>Loading...</p> : (
         <div>
-            <h3>Edit Reservation</h3>
+            <h3 className="center-text">Edit Reservation</h3>
             <ErrorAlert error={reservationError} />
             <ReservationForm reservation={reservation} changeHandler={changeHandler} submitHandler={submitHandler} />
         </div>
