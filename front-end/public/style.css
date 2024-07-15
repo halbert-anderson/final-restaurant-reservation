@@ -8,7 +8,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background-color: #f4f4f9;
+    background-color: #990214;
     line-height: 1.6;
 }
 
@@ -42,7 +42,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: #535050;
 }
 
 table {
@@ -57,7 +57,7 @@ table, th, td {
 
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 button {
