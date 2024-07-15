@@ -1,76 +1,31 @@
-import React from "react";
-import { Link , useHistory } from "react-router-dom";
-import { listReservations, updateStatus } from "../utils/api";
-
-function DisplayReservations({ reservations, setReservations, setReservationsError }) {
-
-    const history = useHistory();
-
-    async function updateStatusHandler(reservation_id, status) {
-      const abortController = new AbortController();
-      try {
-        await updateStatus(reservation_id, status, abortController.signal);
-        // Update the local state to reflect changes
-        const updatedReservations = await listReservations();
-        setReservations(updatedReservations);
-      } catch (error) {
-        setReservationsError(error);
-      }
-    }
-
-    const finishReservationHandler = async (reservation_id) => {
-        if (window.confirm("Do you want to cancel this reservation?")) {
-            try {
-                await updateStatusHandler(reservation_id, "cancelled");
-                history.go(0);
-            }
-            catch(error) {
-                setReservationsError(error);
-            }
-      };
-    }
-
-    const columnHeadingsForReservationTable = ( 
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Reservation Date</th>
-                <th scope="col">Reservation Time</th>
-                <th scope="col">People</th>
-                <th scope="col">Status</th>
-            </tr>);
-
-    const reservationsForThisDate = reservations.length ? (
+const reservationsForThisDate = reservations.length ? (
         reservations.map((reservation) => (
             <tr key={reservation.reservation_id}>
-                <th scope="row">{reservation.reservation_id}</th>
-                <td>{reservation.first_name}</td>
-                <td>{reservation.last_name}</td>
-                <td>{reservation.mobile_number}</td>
-                <td>{reservation.reservation_date}</td>
-                <td>{reservation.reservation_time}</td>
-                <td>{reservation.people}</td>
-                <td data-reservation-id-status={reservation.reservation_id}>{reservation.status}</td>   
+                <td data-label="#">{reservation.reservation_id}</td>
+                <td data-label="First Name">{reservation.first_name}</td>
+                <td data-label="Last Name">{reservation.last_name}</td>
+                <td data-label="Mobile Number">{reservation.mobile_number}</td>
+                <td data-label="Reservation Date">{reservation.reservation_date}</td>
+                <td data-label="Reservation Time">{reservation.reservation_time}</td>
+                <td data-label="People">{reservation.people}</td>
+                <td data-label="Status">{reservation.status}</td>   
                 {reservation.status === "booked" && ( 
                 <>  
-                    <td>
+                    <td data-label="Seat">
                         <Link className='btn btn-primary'
                               to={`/reservations/${reservation.reservation_id}/seat`}
-              
                         >Seat
                         </Link>                        
                     </td>
-
-                    <td>
+    
+                    <td data-label="Edit">
                         <Link className="btn btn-secondary"
                               to={`/reservations/${reservation.reservation_id}/edit`}
                         >Edit 
                         </Link>
                     </td>
-
-                    <td>
+    
+                    <td data-label="Cancel">
                         <button className="btn btn-danger"
                                 type="button"
                                 data-reservation-id-cancel={reservation.reservation_id}
@@ -89,21 +44,17 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
             </td>
         </tr>
     );
-
+    
     return (
-
-        <table className="table">
-            <thead>
-                {columnHeadingsForReservationTable} 
-            </thead>
-            <tbody>
-                {reservationsForThisDate}
-            </tbody>
-        </table>
-        
-  );
-
-  }
-
-
-export default DisplayReservations;
+        <div className="table-responsive">
+            <table className="table">
+                <thead>
+                    {columnHeadingsForReservationTable} 
+                </thead>
+                <tbody>
+                    {reservationsForThisDate}
+                </tbody>
+            </table>
+        </div>
+    );
+    

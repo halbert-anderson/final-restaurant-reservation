@@ -79,6 +79,102 @@ button:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .table-responsive table,
+    .table-responsive thead,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block;
+    }
+
+    .table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-responsive tr {
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    .table-responsive td {
+        /* Make table cells look like card content */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50%;
+        position: relative;
+        text-align: right;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .table-responsive td:before {
+        /* Add a label to each cell */
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-responsive table,
+    .table-responsive thead,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block;
+    }
+
+    .table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-responsive tr {
+        margin-bottom: 5px;  /* tighter spacing */
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);  /* lighter shadow */
+    }
+
+    .table-responsive td {
+        /* Make table cells look like card content, with more padding and bigger text for touch-friendliness */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50%;
+        position: relative;
+        text-align: right;
+        border-bottom: 1px solid #ddd;
+        padding: 8px;  /* smaller padding */
+        font-size: 16px;  /* larger text for better readability */
+    }
+
+    .table-responsive td:before {
+        /* Add a label to each cell with more clear labeling */
+        content: attr(data-label);
+        position: absolute;
+        left: 5px;  /* reduced padding for labels */
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Additional styles for buttons to make them easier to tap on touch devices */
+    .table-responsive .btn {
+        padding: 10px 12px;  /* larger button padding */
+        font-size: 14px;  /* larger button text */
+    }
+}
+
+
+/* @media (max-width: 768px) {
     .container {
         width: 95%;
     }
@@ -100,9 +196,9 @@ button:hover {
     table, th, td {
         font-size: 14px;
     }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     header {
         min-height: 50px;
         padding-top: 10px;
@@ -125,4 +221,4 @@ button:hover {
     button {
         padding: 6px 12px;
     }
-}
+} */
