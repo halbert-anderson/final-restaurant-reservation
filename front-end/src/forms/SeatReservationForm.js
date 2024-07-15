@@ -35,7 +35,7 @@ function SeatReservationForm({ tables, table_id, changeHandler, submitHandler })
         >
         Submit
         </button>
-        <button className="btn btn-secondary ml-2" 
+        <button className="btn btn-danger ml-2" 
                 type="button"
                 onClick={cancelHandler}
         >

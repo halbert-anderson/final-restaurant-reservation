@@ -100,7 +100,7 @@ return (
         </div>
 
         <div className="mb-3"> 
-            <button className="btn btn-secondary mr-2"
+            <button className="btn btn-danger mr-2"
                     type="button"
                     onClick={cancelHandler}
             >Cancel
