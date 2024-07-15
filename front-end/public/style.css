@@ -11,6 +11,10 @@ body {
     background-color: #8B0000; /* Dark red background */
     line-height: 1.6;
 }
+.form-label {
+    color: #000000 ; 
+    font-weight: bold;
+}
 
 .center-text {
     text-align: center;
@@ -109,6 +113,7 @@ button:hover {
         margin-bottom: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
+
 
     .table-responsive td {
         /* Make table cells look like card content */
