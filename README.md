@@ -247,7 +247,7 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
 3. **Set up environment variables:**
 
-```
+```bash
 PORT=5000
 DATABASE_URL=your-database-url
 ```
@@ -260,6 +260,6 @@ DATABASE_URL=your-database-url
 
 5. **Open your browser**
 
-```
+```bash
  Go to http://localhost:3000 to view the application. 
 ```
