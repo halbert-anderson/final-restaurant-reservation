@@ -242,25 +242,26 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
 2. **Install dependencies:**
 
-``` bash
-npm install
-```
+  ``` bash
+    npm install
+  ```
 
 3. **Set up environment variables:**
 
 
-``` makefile
+```makefile
 PORT=5000
 DATABASE_URL=your-database-url
 ```
 
 4. **Run the application:**
 
-``` bash
+```bash
 npm start
 ```
 
 5. **Open your browser**
+
 ```
 Go to http://localhost:3000 to view the application.
 ```
