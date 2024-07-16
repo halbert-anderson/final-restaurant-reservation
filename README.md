@@ -237,3 +237,16 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
    ```bash
    git clone https://github.com/halbert-anderson/final-restaurant-reservation
    cd final-restaurant-reservation
+
+2. **Install dependencies:**
+```bash
+npm install
+3. **Set up environment varialbes:**
+```text
+PORT=5000
+DATABASE_URL=your-database-url
+4. **Run the application:**
+```bash
+npm start
+5. **Open your browser
+Go to http://localhost:3000 to view the application.
