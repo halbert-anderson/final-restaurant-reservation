@@ -216,7 +216,7 @@ You can access the live application [here](https://final-restaurant-reservation-
 ![Dashboard Screenshot](./front-end/public/images/dashboard.png)
 ![Reservation Form Screenshot](./front-end/public/images/reservation_form.png)
 ![Tables Management Screenshot](./front-end/public/images/tables_management.png)
-![Reservations Search Screenshot](./front-end/public/images/reservations_search.png)
+![Reservations Search Screenshot](./front-end/public/images/reservation_search.png)
 ![Reservation Edit Screenshot](./front-end/public/images/edit_reservation.png)
 
 ## Summary
@@ -234,14 +234,14 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
 1. **Clone the repository:**
 
-   ```bash
+  ```bash
    git clone https://github.com/halbert-anderson/final-restaurant-reservation
    cd final-restaurant-reservation
-```
+  ```
 
 2. **Install dependencies:**
 
-    ```bash
+  ```bash
     npm install
   ```
 
