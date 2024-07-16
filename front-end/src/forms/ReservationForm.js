@@ -9,7 +9,8 @@ function ReservationForm( {reservation, changeHandler,submitHandler}){
     } 
 
 return (
-    <form onSubmit={submitHandler} className="form-group mb-4">
+    <form onSubmit={submitHandler} className="form-group mb-4 reservation-form
+    ">
         <div className="row mb-3">
             <div className="col-md-6 form-group">
                 <label className="form-label" htmlFor="first_name">

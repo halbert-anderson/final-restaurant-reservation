@@ -13,12 +13,14 @@ function DisplayTables({tables, finishHandler }) {
 
   const rowsForTablesTable = tables.map((table) => (
     <tr key={table.table_id}>
-        <td>{table.table_name}</td>
-        <td>{table.capacity}</td>
-        <td data-table-id-status={table.table_id}>
+        <td data-label="Table Name">{table.table_name}</td>
+        <td data-label="Capacity">{table.capacity}</td>
+        <td data-label="Status"
+           data-table-id-status={table.table_id}>
             {table.reservation_id ? "Occupied" : "Free"}
         </td>
-        <td>{table.reservation_id ? (
+        <td data-label="Actions">
+            {table.reservation_id ? (
              <button className="btn btn-primary"
                      type="button" 
                      data-table-id-finish={table.table_id}

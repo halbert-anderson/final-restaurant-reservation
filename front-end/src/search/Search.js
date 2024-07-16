@@ -36,7 +36,7 @@ async function submitHandler(event) {
 
 return (
         <>
-<h3 className="center-text">Search Reservations by Phone Number</h3>
+<h3 className="center-text mt-4">Search Reservations by Phone Number</h3>
 <ErrorAlert error={searchError} />
             <SearchForm mobileNumber={mobileNumber} changeHandler={changeHandler} submitHandler={submitHandler} />
             {noReservations ? ( <p>No reservations found</p> ) :

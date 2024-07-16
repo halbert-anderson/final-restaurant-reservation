@@ -53,7 +53,7 @@ function ReservationCreate() {
 
     return ( 
         <div>
-          <h2 className="center-text">Create Reservation</h2>
+          <h2 className="center-text mt-3">Create Reservation</h2>
           <ErrorAlert error={reservationErrors} /> 
           <ReservationForm reservation={reservation} changeHandler={changeHandler} submitHandler={submitHandler} />
         </div>

@@ -5,7 +5,7 @@ import { today, previous, next } from "../utils/date-time";
 import DateButtons from "./DateButtons";
 import DisplayReservations from "./DisplayReservations";
 import DisplayTables from "./DisplayTables";
-
+import { formatAsDate } from "../utils/date-time";
 /**
  * Defines the dashboard page.
  * @param {string} date
@@ -62,24 +62,26 @@ function Dashboard({ date }) {
         }
     }
   }
-  
+  const formattedDate = formatAsDate(date);
+  const reservationsTitleText = `Reservations for date ${formattedDate}`;
   return (
-    <main>
-      <h1>Dashboard</h1>
-      <div className="d-md-flex mb-3">
-        <h4 className="mb-0">Reservations for date {date}</h4>
-      </div>
-      <DateButtons
-        previous={`/dashboard?date=${previous(date)}`}
-        today={`/dashboard?date=${today()}`}
-        next={`/dashboard?date=${next(date)}`}
-        date={date}
-      />
-      <ErrorAlert error={reservationsError} />
-      <DisplayReservations reservations={reservations} setReservations={setReservations} setReservationsError={setReservationsError} />
-      <ErrorAlert error={tablesError} />
-      <DisplayTables tables={tables} finishHandler={finishHandler} />
-    </main>
+    <main className="main-container">
+    <h1 className="center-text">Dashboard</h1>
+    <h4 className="center-text">{reservationsTitleText}</h4>
+    <div className="date-buttons-container">
+        <DateButtons
+            previous={`/dashboard?date=${previous(date)}`}
+            today={`/dashboard?date=${today()}`}
+            next={`/dashboard?date=${next(date)}`}
+            date={date}
+        />
+    </div>
+    <ErrorAlert error={reservationsError} />
+    <DisplayReservations reservations={reservations} setReservations={setReservations} setReservationsError={setReservationsError} />
+    <ErrorAlert error={tablesError} />
+    <DisplayTables tables={tables} finishHandler={finishHandler} />
+</main>
+
   );
 }
 

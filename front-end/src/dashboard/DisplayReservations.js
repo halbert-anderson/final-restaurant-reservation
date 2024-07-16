@@ -40,33 +40,35 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
                 <th scope="col">Reservation Time</th>
                 <th scope="col">People</th>
                 <th scope="col">Status</th>
+                <th scope="col">Actions</th>
             </tr>);
 
     const reservationsForThisDate = reservations.length ? (
-        reservations.map((reservation) => (
-            <tr key={reservation.reservation_id}>
-                <th scope="row">{reservation.reservation_id}</th>
-                <td>{reservation.first_name}</td>
-                <td>{reservation.last_name}</td>
-                <td>{reservation.mobile_number}</td>
-                <td>{reservation.reservation_date}</td>
-                <td>{reservation.reservation_time}</td>
-                <td>{reservation.people}</td>
-                <td data-reservation-id-status={reservation.reservation_id}>{reservation.status}</td>   
-                <td>{reservation.status === "booked" && ( 
+        reservations.map((reservation, index) => (
+                <tr key={reservation.reservation_id}>
+                    <td data-label="#">{index + 1}</td>
+                    <td data-label="First Name">{reservation.first_name}</td>
+                    <td data-label="Last Name">{reservation.last_name}</td>
+                    <td data-label="Mobile Number">{reservation.mobile_number}</td>
+                    <td data-label="Reservation Date">{reservation.reservation_date}</td>
+                    <td data-label="Reservation Time">{reservation.reservation_time}</td>
+                    <td data-label="People">{reservation.people}</td>
+                    <td data-label="Status"
+                        data-reservation-id-status={reservation.reservation_id}>{reservation.status}</td>   
+                    <td data-label="Actions">{reservation.status === "booked" && ( 
                         <>  
-                                <Link className='btn btn-primary'
+                                <Link className='btn btn-primary m-1'
                                       to={`/reservations/${reservation.reservation_id}/seat`}
               
                                 >Seat
                                 </Link>                        
 
-                                <Link className="btn btn-secondary"
+                                <Link className="btn btn-secondary m-1"
                                       to={`/reservations/${reservation.reservation_id}/edit`}
                                 >Edit 
                                 </Link>
                   
-                                <button className="btn btn-danger"
+                                <button className="btn btn-danger m-1"
                                         type="button"
                                         data-reservation-id-cancel={reservation.reservation_id}
                                         onClick={() => finishReservationHandler(reservation.reservation_id)}
@@ -78,16 +80,18 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
             </tr>
         ))
     ) : (
-        <tr>
-            <td colSpan="9" className="text-center">
-                No reservations for this date.
+        <tr className="no-reservations-row">
+            <td colSpan="9">
+               <div className="no-reservations-message">
+                   No reservations for this date.
+               </div>
             </td>
         </tr>
     );
 
     return (
-
-        <table className="table table-responsive">
+        <div className="table-responsive">
+        <table className="table">
             <thead>
                 {columnHeadingsForReservationTable} 
             </thead>
@@ -95,7 +99,7 @@ function DisplayReservations({ reservations, setReservations, setReservationsErr
                 {reservationsForThisDate}
             </tbody>
         </table>
-        
+        </div>
   );
 
   }

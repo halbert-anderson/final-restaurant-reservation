@@ -13,52 +13,38 @@ function DateButtons({ previous, today, next, date }) {
   }
 
   return (
-    <div className="btn-group" role="group" aria-label="navigation buttons">
-      {/* <Link className="btn btn-secondary" to={previous}>
-        <span className="oi oi-chevron-left" />
-        &nbsp;Previous
-      </Link>
-      <Link className="btn btn-secondary" to={today}>
-        Today
-      </Link>
-      <Link className="btn btn-secondary" to={next}>
-        Next&nbsp;
-        <span className="oi oi-chevron-right" />
-      </Link> */}
-        <button         
-            type="button" 
-            className="btn btn-secondary mr-2"
-            onClick={() => history.push(previous)}>
-        Previous
+    <div className="date-navigation">
+       <div className="button-group">
+          <button className="btn btn-secondary mr-2"      
+                  type="button" 
+                  onClick={() => history.push(previous)}>
+          Previous
         </button>
-                  
-        <button         
-            type="button" 
-            className="btn btn-secondary mr-2"
-            onClick={() => history.push(today)}>
+
+        <button className="btn btn-secondary mr-2"        
+                type="button" 
+                onClick={() => history.push(today)}>
         Today
         </button>
 
-        <button         
-            type="button" 
-            className="btn btn-secondary mr-2"
-            onClick={() => history.push(next)}>
+        <button className="btn btn-secondary mr-2"        
+                type="button" 
+                onClick={() => history.push(next)}>
         Next
         </button>
-
-        <label htmlFor='dashboard_date'>
-          <input
-            className="form-control date-control" 
-            id="dashboard_date"
-            name="dashboard_date"
-            type="date"
-            onChange={dateChangeHandler}
-            value={formDate}
-            
-          />
-        </label>
-
+      </div>
+      <label htmlFor='dashboard_date' className="date-label">
+       <input
+          className="form-control date-control mt-2" 
+          id="dashboard_date"
+          name="dashboard_date"
+          type="date"
+          onChange={dateChangeHandler}
+          value={formDate}
+        />  
+      </label>
     </div>
+  
   );
 }
 

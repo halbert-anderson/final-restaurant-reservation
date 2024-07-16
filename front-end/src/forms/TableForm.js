@@ -15,7 +15,7 @@ function TableForm({ table, changeHandler, submitHandler }) {
     
 
 return (
-    <form onSubmit={submitHandler} className="container p-3">
+    <form onSubmit={submitHandler} className="container reservation-form p-3">
         <div className="form-group">                        
             <label className="form-label" htmlFor="table_name">
                 Table Name

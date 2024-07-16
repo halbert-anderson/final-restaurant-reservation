@@ -7,13 +7,19 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #F5F5DC; /* Cream color for text to contrast the dark red */
-    background-color: #8B0000; /* Dark red background */
+    color: #333;
+    background-color: #8B0000 !important; /* Dark red background */
     line-height: 1.6;
 }
+
 .form-label {
-    color: #000000 ; 
+    color: #000000; 
     font-weight: bold;
+}
+
+/* New styles for Reservation Form */
+.reservation-form .form-label {
+    color:  #FFF5E6;
 }
 
 .center-text {
@@ -25,17 +31,113 @@ body {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
-    background-color: #FFFFFF; /* White background for container for legibility */
-    padding: 20px; /* Added padding for some spacing inside container */
-    border-radius: 8px; /* Optional border radius for aesthetic */
+    background-color: transparent; /* Changed to transparent */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Add this for areas that need a white background */
+.white-bg {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Centering DateButtons container */
+.date-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* Styling for DateButtons component if it's a class */
+.date-buttons {
+    padding: 10px;
+    background-color: #6A5ACD;
+    border-radius: 5px;
+    color: #FFF;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.date-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.date-label {
+    margin-left: 10px;
+}
+
+.btn-secondary {
+    margin-right: 5px;
+}
+
+.search-bar {
+    margin-top: 1rem;
+}
+
+/* Table styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-responsive th,
+.table-responsive td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #D3D3D3;
+    background-color: #FFF;
+}
+
+/* Hide data-label content by default */
+.table-responsive td::before {
+    display: none;
+}
+
+.no-reservations-row {
+    display: table-row;
+    width: 100%;
+}
+
+.no-reservations-message {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Specific styles for headers within main */
+h1, h2, h3, h4 {
+    color: #FFF;
+    margin-bottom: 0.5em;
 }
 
 header {
-    background: #333333; /* Dark grey for header */
-    color: #FFF; /* White for header text */
+    background: #333333;
+    color: #FFF;
     padding-top: 10px;
     min-height: 50px;
-    border-bottom: 3px solid #D4AF37; /* Gold for a decorative accent */
+    border-bottom: 3px solid #D4AF37;
 }
 
 nav {
@@ -46,35 +148,19 @@ nav {
 }
 
 nav a {
-    color: #FFF; /* White text for navigation to stand out */
+    color: #FFF;
     text-decoration: none;
     padding: 10px 15px;
     margin: 0 5px;
 }
 
 nav a:hover {
-    background-color: #D4AF37; /* Gold on hover for visual feedback */
-}
-
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #D3D3D3; /* Light gray for a softer look */
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-    background-color: #FFF; /* White backgrounds in table cells for readability */
+    background-color: #D4AF37;
 }
 
 button {
-    background-color: #000080; /* Navy blue for buttons, good contrast with dark red */
-    color: #F5F5DC; /* Cream color text */
+    background-color: #000080;
+    color: #F5F5DC;
     border: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -82,12 +168,12 @@ button {
 }
 
 button:hover {
-    background-color: #228B22; /* Forest green for hover, stands out against dark red */
+    background-color: #228B22;
 }
-/* 
+
 /* Responsive styles */
 @media (max-width: 768px) {
-    .container {
+    .container, .date-buttons-container  {
         width: 95%;
     }
 
@@ -105,36 +191,105 @@ button:hover {
         margin: 5px 0;
     }
 
-    table, th, td {
-        font-size: 14px;
+    .date-navigation {
+        flex-direction: column;
     }
 
-    .table-responsive tr {
+    .button-group {
         margin-bottom: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
 
+    .date-label {
+        margin-left: 0;
+        width: 100%;
+    }
 
-    .table-responsive td {
-        /* Make table cells look like card content */
+    .date-control {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-responsive table {
+        border: 0;
+    }
+    
+    .table-responsive thead {
+        display: none;
+    }
+
+    .table-responsive tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .table-responsive tbody td {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 50%;
-        position: relative;
-        text-align: right;
         border-bottom: 1px solid #ddd;
-        padding: 10px;
+        padding: 0.5rem;
+        text-align: right;
     }
 
-    .table-responsive td:before {
-        /* Add a label to each cell */
+    .table-responsive tbody td:last-child {
+        border-bottom: none;
+        justify-content: flex-end;
+    }
+
+    .table-responsive tbody td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        text-align: left;
         font-weight: bold;
+        text-transform: uppercase;
+        flex: 1;
+        text-align: left;
+        padding-right: 0.5rem;
+    }
+
+    .table-responsive tbody td > * {
+        flex: 2;
+        text-align: right;
+    }
+
+    .table-responsive tbody td[data-label="Actions"]::before {
+        content: "Actions:";
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+    .table-responsive tbody td[data-label="Actions"] {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .table-responsive tbody td[data-label="Actions"] button {
+        margin: 0.25rem;
+    }
+
+    .no-reservations-row,
+    .no-reservations-row td {
+        display: block;
+        width: 100%;
+    }
+
+    .no-reservations-message {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50px;
+    }
+
+    .no-reservations-row td::before {
+        content: none;
     }
 }
 
@@ -143,7 +298,9 @@ button:hover {
         min-height: 50px;
         padding-top: 10px;
     }
-
+    h1, h2, h3, h4 {
+        font-size: 16px;
+    }
     nav {
         flex-direction: column;
     }
@@ -154,16 +311,11 @@ button:hover {
         margin: 2px 0;
     }
 
-    th, td {
-        padding: 6px;
-    }
-
     button {
         padding: 6px 12px;
     }
 
-    .table-responsive td:before {
-        /* Adjust label padding for smaller screens */
-        left: 5px;  /* reduced padding for labels */
+    .table-responsive td::before {
+        left: 5px;
     }
-} 
+}
