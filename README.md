@@ -10,8 +10,8 @@ You can access the live application [here](https://final-restaurant-reservation-
 
 ### Base URL
 
-**Development:** `http://localhost:5001`
-**Production:**  `https://final-restaurant-reservation-system-9mjb.onrender.com`
+- **Development:** `http://localhost:5001`
+- **Production:** `https://final-restaurant-reservation-system-9mjb.onrender.com`
 
 ### Endpoints
 
@@ -216,7 +216,8 @@ You can access the live application [here](https://final-restaurant-reservation-
 ![Dashboard Screenshot](./public/images/dashboard.png)
 ![Reservation Form Screenshot](./public/images/reservation_form.png)
 ![Tables Management Screenshot](./public/images/tables_management.png)
-
+![Reservations Search Screenshot](./public/images/reservations_search.png)
+![Reservation Edit Screenshot](./public/images/edit_reservation.png)
 
 ## Summary
 
@@ -224,7 +225,7 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
 ## Technology Used
 
-**Frontend:** React, HTML, CSS
+- **Frontend:** React, HTML, CSS
 - **Backend:** Node.js, Express
 - **Database:** PostgreSQL
 - **Others:** Fetch for API calls, Bootstrap for styling
@@ -235,25 +236,4 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
    ```bash
    git clone https://github.com/halbert-anderson/final-restaurant-reservation
-   cd restaurant-reservation-system
-
-2. **Install dependencies:**
-
-```bash
-npm install
-
-3. **Set up environment variables:**
-
-Create a .env file in the root directory and add the following:
-
-```makefile
-PORT=5000
-DATABASE_URL=your-database-url
-
-4. **Run the application:**
-```bash
-
-npm start
-5. **Open your browser:**
-
-Go to http://localhost:3000 to view the application.
+   cd final-restaurant-reservation
