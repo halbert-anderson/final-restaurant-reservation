@@ -213,11 +213,11 @@ You can access the live application [here](https://final-restaurant-reservation-
 
 ## Screenshots
 
-![Dashboard Screenshot](./public/images/dashboard.png)
-![Reservation Form Screenshot](./public/images/reservation_form.png)
-![Tables Management Screenshot](./public/images/tables_management.png)
-![Reservations Search Screenshot](./public/images/reservations_search.png)
-![Reservation Edit Screenshot](./public/images/edit_reservation.png)
+![Dashboard Screenshot](.front-end/public/images/dashboard.png)
+![Reservation Form Screenshot](.front-end/public/images/reservation_form.png)
+![Tables Management Screenshot](.front-end/public/images/tables_management.png)
+![Reservations Search Screenshot](.front-end/public/images/reservations_search.png)
+![Reservation Edit Screenshot](.front-end/public/images/edit_reservation.png)
 
 ## Summary
 
@@ -234,22 +234,33 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
 
 1. **Clone the repository:**
 
+   
    ```bash
    git clone https://github.com/halbert-anderson/final-restaurant-reservation
    cd final-restaurant-reservation
+```
 
 2. **Install dependencies:**
-```bash
-npm install
 
-3. **Set up environment varialbes:**
-```text
+``` bash
+npm install
+```
+
+3. **Set up environment variables:**
+
+
+``` makefile
 PORT=5000
 DATABASE_URL=your-database-url
+```
 
 4. **Run the application:**
-```bash
+
+``` bash
 npm start
+```
 
 5. **Open your browser**
+```
 Go to http://localhost:3000 to view the application.
+```
