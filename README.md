@@ -239,11 +239,7 @@ The Restaurant Reservation System allows restaurant staff to easily manage reser
    cd final-restaurant-reservation
 ```
 
-2. **Install dependencies:**
 
-  ```bash
-    npm install
-  ```
 
 3. **Set up environment variables:**
 
