@@ -213,9 +213,10 @@ You can access the live application [here](https://final-restaurant-reservation-
 
 ## Screenshots
 
-![Dashboard Screenshot](link-to-screenshot-1.png)
-![Reservation Form Screenshot](link-to-screenshot-2.png)
-![Tables Management Screenshot](link-to-screenshot-3.png)
+![Dashboard Screenshot](./public/images/dashboard.png)
+![Reservation Form Screenshot](./public/images/reservation_form.png)
+![Tables Management Screenshot](./public/images/tables_management.png)
+
 
 ## Summary
 
