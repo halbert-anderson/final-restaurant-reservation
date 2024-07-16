@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import ErrorAlert from "../layout/ErrorAlert";
 import { listTables, seatReservation } from "../utils/api";
-import SeatReservationForm from "../forms/SeatReservationForm";
+import SeatReservationForm from "../forms/SeatReservationsForm"
 
 function ReservationSeat() {
     const [tables, setTables] = useState([]);
