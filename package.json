@@ -5,8 +5,8 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/halbert-anderson/restaurant-reservation-system"
-  },
+    "url": "https://github.com/halbert-anderson/final-restaurant-reservation"
+  }, 
   "scripts": {
     "build": "npm -prefix front-end run build",
     "preinstall": "cd ./back-end && npm install",

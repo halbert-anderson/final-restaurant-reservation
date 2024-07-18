@@ -11,8 +11,12 @@ const tablesRouter = require("./tables/tables.router");
 const errorHandler = require("./errors/errorHandler");
 const notFound = require("./errors/notFound");
 
-
-app.use(cors());
+const corsOptions = {
+    origin: process.env.NODE_ENV === 'production' ? /\.onrender\.com$/ : '*',
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/tables", tablesRouter);
