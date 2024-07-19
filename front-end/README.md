@@ -46,6 +46,7 @@ The frontend of the Restaurant Reservation System is built with React. It provid
 ## Environment Variables
 
 Create a `.env` file in the `front-end` directory and add the following environment variables:
+
       ```sh
       REACT_APP_API_BASE_URL=http://localhost:5001
       ```
