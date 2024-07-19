@@ -55,7 +55,7 @@ Create a `.env` file in the `front-end` directory and add the following environm
       
 ## Project Structure
 
-`
+``
 front-end
 ├── public
 │ ├── index.html
@@ -68,7 +68,7 @@ front-end
 │ └── ...
 ├── package.json
 └── README.md
-`
+``
 
 ## Features
 
