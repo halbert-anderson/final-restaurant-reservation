@@ -4,7 +4,7 @@ The Restaurant Reservation System is designed to streamline the process of booki
 
 ## Live Application
 
-You can access the live application [here](https://final-restaurant-reservation-system.onrender.com/dashboard).
+You can access the live application [here](https://final-restaurant-reservation-system.onrender.com).
 
 ## API Documentation
 
