@@ -1,4 +1,4 @@
-# Capstone: Restaurant Reservation System Frontend
+# Capstone: Frontend - Restaurant Reservation System 
 
 
 ## Table of Contents
