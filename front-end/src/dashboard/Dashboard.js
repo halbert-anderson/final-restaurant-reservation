@@ -20,16 +20,28 @@ function Dashboard({ date }) {
 
   useEffect(() => {
     const abortController = new AbortController();
-
-    async function loadDashboard() {
+    setReservations([]);
+    setReservationsError(null);
+    async function loadReservations() {      
       try {
         const reservationList = await listReservations({ date }, abortController.signal);
         setReservations(reservationList);
       } catch (error) {
         console.error("listReservations error:", error);
         setReservationsError(error);
-      }
+      } 
+    }
+    loadReservations();
+    return () => {
+      abortController.abort();
+    };
+  }, [date]);
 
+  useEffect(() => {
+    const abortController = new AbortController();
+    setTables([]);
+    setTablesError(null);
+    async function loadTables() {      
       try {
         const tableList = await listTables(abortController.signal);
         setTables(tableList);
@@ -38,13 +50,12 @@ function Dashboard({ date }) {
         setTablesError(error);
       }
     }
-
-    loadDashboard();
-
+    loadTables();
     return () => {
       abortController.abort();
     };
-  }, [date]);
+  }, []);
+
 
   async function finishHandler(table_id) {
     if (window.confirm('Is this table ready to seat new guests? This cannot be undone.')) {
