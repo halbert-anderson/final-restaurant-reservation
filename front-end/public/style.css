@@ -8,154 +8,48 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background-color: #8B0000 !important; /* Dark red background */
+    background-color: #8B0000;
     line-height: 1.6;
-}
-
-.form-label {
-    color: #000000; 
-    font-weight: bold;
-}
-
-/* New styles for Reservation Form */
-.reservation-form .form-label {
-    color:  #FFF5E6;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    background-color: transparent; /* Changed to transparent */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* Add this for areas that need a white background */
-.white-bg {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-/* Centering DateButtons container */
-.date-buttons-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    flex-wrap: wrap;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-/* Styling for DateButtons component if it's a class */
-.date-buttons {
-    padding: 10px;
-    background-color: #6A5ACD;
-    border-radius: 5px;
-    color: #FFF;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.button-group {
+.main-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.date-navigation {
-    display: flex;
+    flex-grow: 1;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
 }
 
-.date-label {
-    margin-left: 10px;
-}
-
-.btn-secondary {
-    margin-right: 5px;
-}
-
-.search-bar {
-    margin-top: 1rem;
-}
-
-/* Table styles */
-.table-responsive {
-    overflow-x: auto;
-}
-
-.table-responsive table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.table-responsive th,
-.table-responsive td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #D3D3D3;
-    background-color: #FFF;
-}
-
-/* Hide data-label content by default */
-.table-responsive td::before {
-    display: none;
-}
-
-.no-reservations-row {
-    display: table-row;
-    width: 100%;
-}
-
-.no-reservations-message {
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    color: #666;
-}
-
-/* Specific styles for headers within main */
-h1, h2, h3, h4 {
-    color: #FFF;
-    margin-bottom: 0.5em;
-}
-
-header {
-    background: #333333;
-    color: #FFF;
-    padding-top: 10px;
-    min-height: 50px;
-    border-bottom: 3px solid #D4AF37;
-}
-
-nav {
+.sidebar {
+    flex: 0 0 250px; /* Adjust width as necessary */
+    background-color: #333;
+    color: #fff;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    flex-direction: column;
 }
 
-nav a {
-    color: #FFF;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin: 0 5px;
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: transparent; /* Adjust if needed */
 }
 
-nav a:hover {
-    background-color: #D4AF37;
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.navbar-nav {
+    flex-grow: 1;
 }
 
 button {
@@ -169,153 +63,4 @@ button {
 
 button:hover {
     background-color: #228B22;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .container, .date-buttons-container  {
-        width: 95%;
-    }
-
-    header {
-        padding-top: 20px;
-        min-height: 60px;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        padding: 8px;
-        margin: 5px 0;
-    }
-
-    .date-navigation {
-        flex-direction: column;
-    }
-
-    .button-group {
-        margin-bottom: 10px;
-    }
-
-    .date-label {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .date-control {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .table-responsive table {
-        border: 0;
-    }
-    
-    .table-responsive thead {
-        display: none;
-    }
-
-    .table-responsive tbody tr {
-        display: block;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .table-responsive tbody td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding: 0.5rem;
-        text-align: right;
-    }
-
-    .table-responsive tbody td:last-child {
-        border-bottom: none;
-        justify-content: flex-end;
-    }
-
-    .table-responsive tbody td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        text-transform: uppercase;
-        flex: 1;
-        text-align: left;
-        padding-right: 0.5rem;
-    }
-
-    .table-responsive tbody td > * {
-        flex: 2;
-        text-align: right;
-    }
-
-    .table-responsive tbody td[data-label="Actions"]::before {
-        content: "Actions:";
-        display: inline-block;
-        margin-right: 0.5rem;
-    }
-
-    .table-responsive tbody td[data-label="Actions"] {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .table-responsive tbody td[data-label="Actions"] button {
-        margin: 0.25rem;
-    }
-
-    .no-reservations-row,
-    .no-reservations-row td {
-        display: block;
-        width: 100%;
-    }
-
-    .no-reservations-message {
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ddd;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 50px;
-    }
-
-    .no-reservations-row td::before {
-        content: none;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        min-height: 50px;
-        padding-top: 10px;
-    }
-    h1, h2, h3, h4 {
-        font-size: 16px;
-    }
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        text-align: center;
-        padding: 10px;
-        margin: 2px 0;
-    }
-
-    button {
-        padding: 6px 12px;
-    }
-
-    .table-responsive td::before {
-        left: 5px;
-    }
 }
