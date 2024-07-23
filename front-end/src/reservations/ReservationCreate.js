@@ -33,10 +33,7 @@ function ReservationCreate() {
         } catch (error) {
             console.error("createReservation error during form submission:", error);
             setReservationErrors(error);
-        } finally {
-            abortController.abort();
-        }
-  
+        } 
     };
   
     
