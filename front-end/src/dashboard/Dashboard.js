@@ -73,7 +73,6 @@ function Dashboard({ date }) {
         }
     }
   }
-  console.log("date", date, typeof date)
   const formattedDate = formatAsDate(date);
   const reservationsTitleText = `Reservations for date ${formattedDate}`;
   return (
