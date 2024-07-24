@@ -29,6 +29,7 @@ function ReservationCreate() {
 
         try {
             const newReservation = await createReservation(reservation, abortController.signal);
+            console.log("resCreate - date: ",newReservation.reservation_date)
             history.push(`/dashboard?date=${newReservation.reservation_date}`);
         } catch (error) {
             console.error("createReservation error during form submission:", error);

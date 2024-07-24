@@ -23,7 +23,7 @@ import NotFound from "./NotFound";
 function Routes() {
   const query =useQuery();
   const date = query.get("date") || today();
-
+  console.log("routes -date: ",date, typeof date);
   return (
     <Switch>
      
