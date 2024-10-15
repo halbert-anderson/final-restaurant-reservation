@@ -1,6 +1,48 @@
 # Restaurant Reservation System
 
-The Restaurant Reservation System is designed to streamline the process of booking tables and managing reservations in a restaurant. It allows staff to view, create, edit, and manage reservations and table statuses efficiently.
+The Restaurant Reservation System is designed to streamline the process of booking tables and managing reservations in a restaurant. It allows restaurant staff to easily manage reservations and table assignments. 
+Users can create, edit, and cancel reservations, as well as seat guests at tables. The system provides a clear overview of the reservations for any given day and the status of tables, improving the efficiency and organization of the restaurant.
+
+## Technology Used
+
+- **Frontend:** React, HTML, CSS
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Others:** Fetch for API calls, Bootstrap for styling
+
+## Installation Instructions
+
+1. **Clone the repository:**
+
+  ```bash
+   git clone https://github.com/halbert-anderson/final-restaurant-reservation
+   cd final-restaurant-reservation
+  ```
+
+2. **Install dependencies:**
+
+  ```bash
+    npm install
+  ```
+
+3. **Set up environment variables:**
+
+```bash
+PORT=5001
+DATABASE_URL=your-database-url
+```
+
+4. **Run the application:**
+
+```bash
+ npm start
+```
+
+5. **Open your browser**
+
+```bash
+ Go to http://localhost:3000 to view the application. 
+```
 
 ## Live Application
 
@@ -219,47 +261,5 @@ You can access the live application [here](https://final-restaurant-reservation-
 ![Reservations Search Screenshot](./front-end/public/images/reservation_search.png)
 ![Reservation Edit Screenshot](./front-end/public/images/edit_reservation.png)
 
-## Summary
 
-The Restaurant Reservation System allows restaurant staff to easily manage reservations and table assignments. Users can create, edit, and cancel reservations, as well as seat guests at tables. The system provides a clear overview of the reservations for any given day and the status of tables, improving the efficiency and organization of the restaurant.
 
-## Technology Used
-
-- **Frontend:** React, HTML, CSS
-- **Backend:** Node.js, Express
-- **Database:** PostgreSQL
-- **Others:** Fetch for API calls, Bootstrap for styling
-
-## Installation Instructions
-
-1. **Clone the repository:**
-
-  ```bash
-   git clone https://github.com/halbert-anderson/final-restaurant-reservation
-   cd final-restaurant-reservation
-  ```
-
-2. **Install dependencies:**
-
-  ```bash
-    npm install
-  ```
-
-3. **Set up environment variables:**
-
-```bash
-PORT=5001
-DATABASE_URL=your-database-url
-```
-
-4. **Run the application:**
-
-```bash
- npm start
-```
-
-5. **Open your browser**
-
-```bash
- Go to http://localhost:3000 to view the application. 
-```
